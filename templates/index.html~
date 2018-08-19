@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css">
+  <title>Rawls</title>
+</head>
+<body>
+  <h1>Homepage</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/user/username/">Profile</a></li>
+      <li><a href="/add">Add a Device</a></li>
+      <li><a href="/login">Login</a> | Sign up</li>
+    </ul>
+  </nav>
+<body>
+</html>
