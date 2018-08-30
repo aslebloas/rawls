@@ -17,17 +17,17 @@ def profile():
    return render_template("profile.html")
 
 # Add new device
-@app.route("/device/new/")
+@app.route("/devices/new/")
 def add_device():
     return "Add new Device"
 
 # Edit device
-@app.route("/edit/1")
+@app.route("/devices/1/edit")
 def edit_device():
     return "Edit device"
 
 # Delete device
-app.route("/device/1/delete")
+app.route("/devices/1/delete")
 def delete_device():
     return "Delete device"
 
