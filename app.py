@@ -27,7 +27,7 @@ def edit_device():
     return "Edit device"
 
 # Delete device
-app.route("/devices/1/delete")
+@app.route("/devices/1/delete")
 def delete_device():
     return "Delete device"
 
@@ -42,6 +42,6 @@ def login():
     return "Login"
 
 # Sign up
-app.route("/register")
+@app.route("/register")
 def register():
     return "Register"
