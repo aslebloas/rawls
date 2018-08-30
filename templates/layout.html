@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Rawls</title>
 </head>
 <body>
+  <header>Login<header>
   {% block container %}{% endblock %}
-  <nav>
-    <ul>
-      <li><a href="/">Homepage</a></li>
-      <li><a href="/user/username/">Profile</a></li>
-      <li><a href="/add">Add a Device</a></li>
-      <li><a href="/login">Login</a> | Sign up</li>
-    </ul>
-  </nav
+  <footer>
+    <nav>
+      <ul>
+	<li><a href="/">Homepage</a></li>
+	<li><a href="/user/username/">Profile</a></li>
+	<li><a href="/add/">Add a Device</a></li>
+	<li><a href="/stats/">Stats</a></li>
+      </ul>
+    </nav>
+  </footer>
 <body>
 </html>
