@@ -8,13 +8,13 @@ def index():
     return render_template('index.html')
 
 # Show device details
-@app.route("/device/")
+@app.route("/devices/1/")
 def show_device():
-    return "Show Device details"
+    return render_template("show_device.html")
 
 @app.route("/user/username/")
 def profile():
-   return "Profile page"
+   return render_template("profile.html")
 
 # Add new device
 @app.route("/device/new/")
@@ -31,8 +31,13 @@ app.route("/device/1/delete")
 def delete_device():
     return "Delete device"
 
+# Stats
+@app.route("/stats/")
+def stats():
+    return "Stats"
+
 # Login
-app.route("/login")
+@app.route("/login/")
 def login():
     return "Login"
 
