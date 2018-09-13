@@ -1,0 +1,25 @@
+ul {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    height: 100%;
+    padding: 0px;
+}
+
+footer {
+    background: black;
+    height: 20%;
+    display: flex;
+}
+
+li {
+    width: 40%;
+    background: red;
+    color: white;
+    list-style: none;
+    border: 1px solid blue;
+    text-align:center;
+    /* height: 100%; */
+    flex-grow: inherit;
+    align-items: stretch;
+}
