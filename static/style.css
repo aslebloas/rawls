@@ -39,7 +39,7 @@ ul {
 
 footer {
     background: #2d2d2d;
-    position: absolute;
+    position:fixed;
     bottom: 0px;
     width: 100%;
     height: 40px;
@@ -125,4 +125,8 @@ div#devices {
     background: transparent;
     display: flex;
     flex-direction: column;
+}
+div#content {
+    background: transparent;
+    overflow: scroll;
 }
