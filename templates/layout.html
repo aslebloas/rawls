@@ -3,19 +3,20 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <title>Rawls</title>
 </head>
 <body>
-  <header>Rawls<header>
+  <header><h1>Rawls</h1></header>
   <div><a href="/login">Login</a> | <a href="/register">Register</a></div>
   {% block container %}{% endblock %}
   <footer>
     <nav>
       <ul>
-	<li><a href="/">My Devices</a></li>
-	<li><a href="/user/username/">Profile</a></li>
-	<li><a href="/stats">Stats</a></li>
-	<li><a href="/devices/new/">Add new device</a></li>
+	<li><a href="/"><i class="fas fa-home"></i></i></a></li>
+	<li><a href="/user/username/"><i class="fas fa-user"></i></a></li>
+	<li><a href="/stats"><i class="fas fa-chart-line"></i></a></li>
+	<li><a href="/devices/new/"><i class="fas fa-plus"></i></a></li>
       </ul>
     </nav>
   </footer>
