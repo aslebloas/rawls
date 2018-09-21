@@ -1,5 +1,9 @@
+html
+{
+    color: black;
+}
 body {
-     margin:0px;
+    margin:0px;
 }
 ul {
     display: flex;
@@ -58,9 +62,7 @@ li {
     background: #2d2d2d;
     padding: 10px;
 }
-html {
-    background: #696969;
-}
+
 nav {
     width: 100%;
 } 
@@ -92,10 +94,8 @@ header {
     background: #2d2d2d;
 }
 div {
-    background: #4a4949;
     padding: 4px;
     text-align: right;
-    padding-right: 14px;
     color: #bbb9b9;
 }
 
@@ -106,19 +106,28 @@ div a {
 
 h2 {
     text-align: center;
+    color: black;
 }
-div#devices {
-    display:;
+.login-bar
+{
+    padding-right: 14px;
+}
+div#devices-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-h3 {
-    flex-wrap: wrap;
+.device
+{
+    width: 40%;
     border: 1px solid #b3b1b1;
     margin: 5px;
-    padding: 76px;
+    padding: 30px 0px 30px 0px;
     text-align: center;
     border-radius: 9px;
     background: #c6c5c578;
+    margin: 15px;
 }
 
 div#devices {
