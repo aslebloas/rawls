@@ -33,7 +33,7 @@ li {
 
 * {
     font-family:Arial,Helvetica,sans-serif;
-    color: white;
+    color: black;
 }
 ul {
     display: flex;
@@ -138,4 +138,23 @@ div#devices {
 div#content {
     background: transparent;
     overflow: scroll;
+}
+
+.search-bar
+{
+    display: flex;
+    justify-content: center;
+}
+
+.search-input
+{
+    border: 1px solid black;
+}
+
+.search-btn
+{
+    color: black;
+    background: transparent;
+    border: 1px solid green;
+    border-radius: 10px;
 }

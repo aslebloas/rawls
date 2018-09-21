@@ -1,11 +1,23 @@
 {% extends "layout.html" %}
 
 {% block container %}
-<h1>Add a new device</h1>
-<p>Search bar</p>
-<h2>Device 1 example</h2>
-<h2>Device 2 example</h2>
-<h2>Device 3 example</h2>
-<h2>Device 4 example</h2>
+
+<h1 style="text-align: center;">Add a new device</h1>
+
+<div class="search-bar">
+	<form action="#">
+	  <input class="search-input" type="text" name="search" placeholder="e.g. Samsung TV">
+	  <input class="search-btn" type="submit" value="Search">
+	</form>
+</div>
+<div id="devices-container">
+	<div class="device">Amazon Eco</div>
+	<div class="device">Google Next</div>
+	<div class="device">Eero</div>
+	<div class="device">Rumba</div>
+	<div class="device">Molekule</div>
+	<div class="device">Samsung Watch</div>
+
+</div>
 
 {% endblock %}
