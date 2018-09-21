@@ -2,8 +2,17 @@ html
 {
     color: black;
 }
+
+* {
+    font-family:Arial,Helvetica,sans-serif;
+    color: black;
+}
 body {
     margin:0px;
+}
+h2 {
+    text-align: center;
+    color: black;
 }
 ul {
     display: flex;
@@ -17,31 +26,6 @@ footer {
     background: black;
     height: 20%;
     display: flex;
-}
-
-li {
-    width: 40%;
-    background: red;
-    color: white;
-    list-style: none;
-    border: 1px solid blue;
-    text-align:center;
-    /* height: 100%; */
-    flex-grow: inherit;
-    align-items: stretch;
-}
-
-* {
-    font-family:Arial,Helvetica,sans-serif;
-    color: black;
-}
-ul {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 0px;
-}
-
-footer {
     background: #2d2d2d;
     position:fixed;
     bottom: 0px;
@@ -49,18 +33,25 @@ footer {
     height: 40px;
     left: 0px;
 }
+footer nav ul li a i {
+    color: #e8e3dd;
+}
 
 li {
+    flex-grow: inherit;
     width: 40%;
-    background: transparent;
     color: white;
     list-style: none;
+    align-items: stretch;
+    list-style: none;
     text-align:center;
-    /* height: 40px; */
     margin-top: -19px;
     border: 0px;
     background: #2d2d2d;
     padding: 10px;
+}
+li:not(:last-child) {
+    border-right: 2px solid #ffffff4d;
 }
 
 nav {
@@ -69,13 +60,7 @@ nav {
 a {
     text-decoration: none;
 }
-footer nav ul li a i {
-    color: #e8e3dd;
-}
 
-li:not(:last-child) {
-    border-right: 2px solid #ffffff4d;
-}
 header h1 {
     color: #EC9712;
     text-align: center;
@@ -84,9 +69,6 @@ header h1 {
     padding-bottom:;
 }
 
-header {
-    top: 0px;
-}
 header {
     top: 0px;
     padding-top: 14px;
@@ -104,10 +86,6 @@ div a {
     color: #bbb9b9;
 }
 
-h2 {
-    text-align: center;
-    color: black;
-}
 .login-bar
 {
     padding-right: 14px;
