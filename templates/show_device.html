@@ -1,45 +1,99 @@
 {% extends "layout.html" %}
 {% block container %}
 <h1>My Fitbit</h1>
-<h3>Data collected</h3>
-<table>
-  <tr>
-    <th>Type of Data</th>
-    <th>Permission</th>
-  </tr>
-  <tr>
-    <td>Gender</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>Age</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>City</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>Job</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>Weight</td>
-    <td>No</td>
-  </tr>
-  <tr>
-    <td>Heart Rate</td>
-    <td>No</td>
-  </tr>
-  <tr>
-    <td>Sleeping Cycles</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>Activity Frequency</td>
-    <td>Yes</td>
-  </tr>
 
-</table>
+<div class="data-container">
+  <h3>Basic information</h3>
+  <div class="data-row">
+    <div class="data-type">
+      Gender
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="data-row">
+    <div class="data-type">
+      Age
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="data-row">
+    <div class="data-type">
+      City
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="data-row">
+    <div class="data-type">
+      Job
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <h3>Specific information</h3>
+  <div class="data-row">
+    <div class="data-type">
+      Weight
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="data-row">
+    <div class="data-type">
+      Heart Rate
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="data-row">
+    <div class="data-type">
+      Sleeping Cycles
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-type">
+      Activity Frequency
+    </div>
+    <div class="div-switch">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+</div>
 <div><a href="/devices/1/edit">Edit</a> | <a href="/devices/1/delete">Delete</a></div>
 {% endblock %}
