@@ -14,6 +14,10 @@ h2 {
     text-align: center;
     color: black;
 }
+h3 {
+  margin: 2px;
+  text-align: center;
+}
 ul {
     display: flex;
     align-items: flex-start;
@@ -135,9 +139,16 @@ div#content {
     border: 1px solid green;
     border-radius: 10px;
 }
+.btn{
+  border: solid 1px #3ec309;
+  border-radius: 3px;
+  font-size: 1em;
+  background: white;
+  padding: 3%;
+}
 .data-container
 {
-    padding: 4px;
+    padding: 1% 5%;
 }
 .data-row
 {
@@ -213,4 +224,21 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+.profile-container{
+  text-align: center;
+}
+.profile-pic{
+  text-align: center;
+}
+.profile-pic img{
+  max-width: 30%;
+  border-radius: 100px;
+  text-align: center;
+}
+.amount{
+  font-size: 3em;
+  color: #2ab72a;
+  text-align: center;
+  padding: 3%;
 }
