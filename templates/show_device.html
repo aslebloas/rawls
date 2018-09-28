@@ -1,102 +1,142 @@
 {% extends "layout.html" %}
+
 {% block container %}
+
 <h1>My Fitbit</h1>
 
+<div class="block">
+    <p>Allow Fitbit to sell standard data:</p>
+    <div class="data-container">
 
-<h3>Basic information</h3>
-<div class="data-container">
-  <div class="data-row">
-    <div class="data-type">
-      Gender
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
-  <div class="data-row">
-    <div class="data-type">
-      Age
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
-  <div class="data-row">
-    <div class="data-type">
-      City
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
-  <div class="data-row">
-    <div class="data-type">
-      Job
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
-</div>
-<h3>Specific information</h3>
-<div class="data-container">
-  <div class="data-row">
-    <div class="data-type">
-      Weight
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
-  <div class="data-row">
-    <div class="data-type">
-      Heart Rate
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
-  <div class="data-row">
-    <div class="data-type">
-      Sleeping Cycles
-    </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </div>
+      <div class="dev">
+        <div class="data-icon">
+          <i class="far fa-user"></i>
+        </div>
+        <div class="data-name">
+          Biological sex
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
 
-  <div class="data-row">
-    <div class="data-type">
-      Activity Frequency
+      <div class="dev">
+        <div class="data-icon">
+          <i class="far fa-user"></i>
+        </div>
+        <div class="data-name">
+          Age
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="dev">
+        <div class="data-icon">
+          <i class="fas fa-location-arrow"></i>
+        </div>
+        <div class="data-name">
+          Location
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+
     </div>
-    <div class="div-switch">
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
+
+    <p>Allow Fitbit to sell specific data:</p>
+    <div class="data-container">
+
+      <div class="dev">
+        <div class="data-icon">
+          <i class="fas fa-male"></i>
+        </div>
+        <div class="data-name">
+          Height
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="dev">
+        <div class="data-icon">
+          <i class="fas fa-weight"></i>
+        </div>
+        <div class="data-name">
+          Weight
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="dev">
+        <div class="data-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="data-name">
+          Heart Rate
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="dev">
+        <div class="data-icon">
+          <i class="fas fa-bed"></i>
+        </div>
+        <div class="data-name">
+          Sleeping Cycles
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="dev">
+        <div class="data-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="data-name">
+          Activity Frequency
+        </div>
+        <div class="div-switch">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
     </div>
-  </div>
+
 </div>
-<div><a href="/devices/1/edit">Edit</a> | <a href="/devices/1/delete">Delete</a></div>
+<button class="btn red"><a href="/devices/1/delete"> Remove Device</button>
+
 {% endblock %}

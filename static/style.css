@@ -28,12 +28,12 @@ ul {
     display: flex;
     align-items: flex-start;
     flex-wrap: nowrap;
-    height: 100%;
     padding: 0px;
+    margin: 0px;
 }
 
 footer {
-  position:fixed;
+  position: fixed;
   left: 0px;
   bottom: 0px;
   width: 100%;
@@ -98,11 +98,12 @@ div#devices-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
 }
 
 .device
 {
-    width: 100%;
+    width: 50%;
     margin: 5px;
     border-radius: 9px;
     margin: 15px;
@@ -142,6 +143,9 @@ div#content {
   font-size: 1em;
   background: white;
   padding: 3%;
+}
+.red {
+  border-color: red;
 }
 .data-container
 {
@@ -242,7 +246,7 @@ input:checked + .slider:before {
 .block {
   background-color: #e2dfdf;
 }
-.devices-container {
+.devices-container, .data-container {
   display: flex;
   flex-direction: column;
   margin: 1%;
@@ -257,14 +261,20 @@ input:checked + .slider:before {
   border-bottom: solid 1px lightgray;
   min-height: 75px;
 }
-.dev-logo{
+.dev-logo, .data-icon{
   flex: 1;
   padding: 1%;
+  text-align: center;
+  font-size: 2.5em;
+
 }
-.dev-name{
+.dev-name, .data-name{
   flex: 3;
   font-size: 1.5em;
   padding-left: 4%;
+}
+.data-name {
+  flex: 5;
 }
 .dev-check {
   color: gray;
@@ -276,3 +286,6 @@ input:checked + .slider:before {
 .fa-check-circle {
   color: #52d669;
 }
+
+
+
