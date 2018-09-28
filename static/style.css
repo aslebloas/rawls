@@ -1,14 +1,19 @@
 html
 {
-    color: black;
+  color: black;
+  background: #f7f6f6;
 }
 
-* {
-    font-family:Arial,Helvetica,sans-serif;
-    color: black;
+body {
+  font-family: 'Krub', sans-serif;
 }
 body {
-    margin:0px;
+  margin:0px;
+}
+p {
+  color: black;
+  font-weight: bold;
+  padding: 1em 1em 0.5em;
 }
 h2 {
     text-align: center;
@@ -66,7 +71,6 @@ a {
 }
 
 header h1 {
-    color: #EC9712;
     text-align: center;
     font-size: 38px;
     margin: 0px;
@@ -77,18 +81,15 @@ header {
     top: 0px;
     padding-top: 14px;
     padding-bottom: 18px;
-    background: #2d2d2d;
-}
-div {
-    /*padding: 4px;*/
-    color: #bbb9b9;
 }
 
 div a {
     color#bbb9b9:;
     color: #bbb9b9;
 }
-
+img {
+  max-width: 100%;
+}
 .login-bar
 {
     padding-right: 14px;
@@ -101,13 +102,9 @@ div#devices-container {
 
 .device
 {
-    width: 40%;
-    border: 1px solid #b3b1b1;
+    width: 100%;
     margin: 5px;
-    padding: 30px 0px 30px 0px;
-    text-align: center;
     border-radius: 9px;
-    background: #c6c5c578;
     margin: 15px;
 }
 
@@ -241,4 +238,41 @@ input:checked + .slider:before {
   color: #2ab72a;
   text-align: center;
   padding: 3%;
+}
+.block {
+  background-color: #e2dfdf;
+}
+.devices-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  border-radius: 5px;
+  display: flex;
+  background: white;
+}
+.dev {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: solid 1px lightgray;
+  min-height: 75px;
+}
+.dev-logo{
+  flex: 1;
+  padding: 1%;
+}
+.dev-name{
+  flex: 3;
+  font-size: 1.5em;
+  padding-left: 4%;
+}
+.dev-check {
+  color: gray;
+  font-size: 2em;
+  padding: 3%;
+  flex: 1;
+  text-align: center;
+}
+.fa-check-circle {
+  color: #52d669;
 }

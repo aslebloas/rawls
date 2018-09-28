@@ -2,22 +2,102 @@
 
 {% block container %}
 
-<h1 style="text-align: center;">Add a new device</h1>
+<div class="block">
+	<p>Connect a new device to Rawls</p>
 
-<div class="search-bar">
-	<form action="#">
-	  <input class="search-input" type="text" name="search" placeholder="e.g. Samsung TV">
-	  <input class="search-btn" type="submit" value="Search">
-	</form>
-</div>
-<div id="devices-container">
-	<div class="device">Amazon Eco</div>
-	<div class="device">Google Next</div>
-	<div class="device">Eero</div>
-	<div class="device">Rumba</div>
-	<div class="device">Molekule</div>
-	<div class="device">Samsung Watch</div>
+	<div class="devices-container">
 
+		<div class="dev">
+			<div class="dev-logo ">
+				<img src="/static/fitbit-logo.png" alt="">
+			</div>
+			<div class="dev-name">
+				Fitbit
+			</div>
+			<div class="dev-check checked">
+				<i class="far fa-check-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+		<div class="dev">
+			<div class="dev-logo">
+				<img src="/static/alexa.png" alt="">
+			</div>
+			<div class="dev-name">
+				Amazon Alexa
+			</div>
+			<div class="dev-check">
+				<i class="far fa-times-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+
+		<div class="dev">
+			<div class="dev-logo">
+				<img src="/static/misfit.png" alt="">
+			</div>
+			<div class="dev-name">
+				Misfit
+			</div>
+			<div class="dev-check">
+				<i class="far fa-times-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+		<div class="dev">
+			<div class="dev-logo">
+				<img src="/static/strava.png" alt="">
+			</div>
+			<div class="dev-name">
+				Strava
+			</div>
+			<div class="dev-check">
+				<i class="far fa-times-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+
+		<div class="dev">
+			<div class="dev-logo">
+				<img src="/static/withings.png" alt="">
+			</div>
+			<div class="dev-name">
+				Withings
+			</div>
+			<div class="dev-check">
+				<i class="far fa-times-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+
+		<div class="dev">
+			<div class="dev-logo">
+				<img src="/static/nest.png" alt="">
+			</div>
+			<div class="dev-name">
+				Google Nest
+			</div>
+			<div class="dev-check">
+				<i class="far fa-times-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+
+		<div class="dev">
+			<div class="dev-logo">
+				<img src="/static/garmin.png" alt="">
+			</div>
+			<div class="dev-name">
+				Garmin
+			</div>
+			<div class="dev-check">
+				<i class="far fa-times-circle"></i>
+				<i class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+
+
+	</div>
 </div>
 
 {% endblock %}
