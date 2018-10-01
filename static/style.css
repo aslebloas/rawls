@@ -255,21 +255,21 @@ input:checked + .slider:before {
   border-radius: 5px;
   display: flex;
   background: white;
-  padding-bottom: 50px;
+  padding-bottom: 33px;
 }
 .dev {
   display: flex;
   justify-content: left;
   align-items: center;
   border-bottom: solid 1px lightgray;
-  min-height: 75px;
+  height: 105px;
 }
 .dev-logo, .data-icon{
   flex: 1;
   padding: 1%;
   text-align: center;
   font-size: 2.5em;
-
+  max-height: 60px;
 }
 .dev-name, .data-name{
   flex: 3;
@@ -290,5 +290,6 @@ input:checked + .slider:before {
   color: #52d669;
 }
 
-
-
+.dev-logo img {
+    max-height: 70px;
+}
