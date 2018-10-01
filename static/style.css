@@ -293,3 +293,6 @@ input:checked + .slider:before {
 .dev-logo img {
     max-height: 70px;
 }
+.device img {
+    max-height: 80px;
+}
