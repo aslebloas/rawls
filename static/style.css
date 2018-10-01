@@ -1,37 +1,46 @@
 html
 {
-    color: black;
+  color: black;
+  background: #f7f6f6;
 }
 
-* {
-    font-family:Arial,Helvetica,sans-serif;
-    color: black;
+body {
+  font-family: 'Krub', sans-serif;
 }
 body {
-    margin:0px;
+  margin:0px;
+}
+p {
+  color: black;
+  font-weight: bold;
+  padding: 1em 1em 0.5em;
+  margin: 0;
 }
 h2 {
     text-align: center;
     color: black;
 }
+h3 {
+  margin: 2px;
+  text-align: center;
+}
 ul {
     display: flex;
     align-items: flex-start;
     flex-wrap: nowrap;
-    height: 100%;
     padding: 0px;
+    margin: 0px;
 }
 
 footer {
-    background: black;
-    height: 20%;
-    display: flex;
-    background: #2d2d2d;
-    position:fixed;
-    bottom: 0px;
-    width: 100%;
-    height: 40px;
-    left: 0px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: black;
+  height: 6%;
+  display: flex;
+  background: #2d2d2d;
 }
 footer nav ul li a i {
     color: #e8e3dd;
@@ -62,7 +71,6 @@ a {
 }
 
 header h1 {
-    color: #EC9712;
     text-align: center;
     font-size: 38px;
     margin: 0px;
@@ -73,19 +81,15 @@ header {
     top: 0px;
     padding-top: 14px;
     padding-bottom: 18px;
-    background: #2d2d2d;
-}
-div {
-    padding: 4px;
-    text-align: right;
-    color: #bbb9b9;
 }
 
 div a {
     color#bbb9b9:;
     color: #bbb9b9;
 }
-
+img {
+  max-width: 100%;
+}
 .login-bar
 {
     padding-right: 14px;
@@ -94,18 +98,15 @@ div#devices-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
     padding-bottom: 50px;
 }
 
 .device
 {
-    width: 40%;
-    border: 1px solid #b3b1b1;
+    width: 50%;
     margin: 5px;
-    padding: 30px 0px 30px 0px;
-    text-align: center;
     border-radius: 9px;
-    background: #c6c5c578;
     margin: 15px;
 }
 
@@ -137,3 +138,155 @@ div#content {
     border: 1px solid green;
     border-radius: 10px;
 }
+.btn{
+  border: solid 1px #3ec309;
+  border-radius: 3px;
+  font-size: 1em;
+  background: white;
+  padding: 3%;
+}
+.red {
+  border-color: red;
+}
+.data-container
+{
+    padding: 1% 5%;
+}
+.data-row
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 4px;
+}
+.data-type
+{
+    /*flex-grow: 3;*/
+    font-size: 1.5em;
+    color: black;
+}
+.div-switch
+{
+    /*flex-grow: 1;*/
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3ec309;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3ec309;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.profile-container{
+  text-align: center;
+}
+.profile-pic{
+  text-align: center;
+}
+.profile-pic img{
+  max-width: 30%;
+  border-radius: 100px;
+  text-align: center;
+}
+.amount{
+  font-size: 3em;
+  color: #2ab72a;
+  text-align: center;
+  padding: 3%;
+}
+.block {
+  background-color: #e2dfdf;
+}
+.devices-container, .data-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  border-radius: 5px;
+  display: flex;
+  background: white;
+}
+.dev {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: solid 1px lightgray;
+  min-height: 75px;
+}
+.dev-logo, .data-icon{
+  flex: 1;
+  padding: 1%;
+  text-align: center;
+  font-size: 2.5em;
+
+}
+.dev-name, .data-name{
+  flex: 3;
+  font-size: 1.5em;
+  padding-left: 4%;
+}
+.data-name {
+  flex: 5;
+}
+.dev-check {
+  color: gray;
+  font-size: 2em;
+  padding: 3%;
+  flex: 1;
+  text-align: center;
+}
+.fa-check-circle {
+  color: #52d669;
+}
+
+
+

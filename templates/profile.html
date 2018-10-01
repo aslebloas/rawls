@@ -1,5 +1,18 @@
 {% extends "layout.html" %}
 {% block container %}
-<h1>My profile</h1>
-<p>My Bank info</p>
+<div class="profile-container">
+	<div class="profile-pic">
+		<img src="/static/profile-pic.png" alt="">
+	</div>
+	<h3>
+		mary.smith@example.com
+	</h3>
+	<div class="amount">
+		$150
+	</div>
+	<div>
+		<button class="btn">Manage Account</button>
+	</div>
+</div>
+
 {% endblock %}
