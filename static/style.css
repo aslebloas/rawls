@@ -229,6 +229,7 @@ input:checked + .slider:before {
 }
 .profile-container{
   text-align: center;
+  padding-bottom: 50px;
 }
 .profile-pic{
   text-align: center;
