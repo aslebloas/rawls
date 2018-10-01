@@ -99,6 +99,7 @@ div#devices-container {
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 
 .device
