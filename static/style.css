@@ -32,13 +32,17 @@ ul {
     margin: 0px;
 }
 
+main {
+  margin-bottom: 40px;
+}
+
 footer {
   position: fixed;
   left: 0px;
   bottom: 0px;
   width: 100%;
   background: black;
-  height: 6%;
+  /*height: 6%;*/
   display: flex;
   background: #2d2d2d;
 }
@@ -104,10 +108,10 @@ div#devices-container {
 
 .device
 {
-    width: 50%;
     margin: 5px;
     border-radius: 9px;
     margin: 15px;
+    text-align: center;
 }
 
 div#devices {
@@ -145,12 +149,17 @@ div#content {
   background: white;
   padding: 3%;
 }
+.mgmt-btn
+{
+  text-align: center;
+  padding: 3%;
+}
 .red {
   border-color: red;
 }
 .data-container
 {
-    padding: 1% 5%;
+    padding: 0% 5%;
 }
 .data-row
 {
@@ -255,21 +264,21 @@ input:checked + .slider:before {
   border-radius: 5px;
   display: flex;
   background: white;
-  padding-bottom: 33px;
+  padding: 2% 0% 0% 2%;
 }
 .dev {
   display: flex;
   justify-content: left;
   align-items: center;
   border-bottom: solid 1px lightgray;
-  height: 105px;
+  height: auto;
 }
 .dev-logo, .data-icon{
   flex: 1;
   padding: 1%;
   text-align: center;
-  font-size: 2.5em;
-  max-height: 60px;
+  font-size: 2em;
+  /*max-height: 60px;*/
 }
 .dev-name, .data-name{
   flex: 3;
