@@ -124,24 +124,16 @@ div#content {
     overflow: scroll;
 }
 
-.search-bar
-{
-    display: flex;
-    justify-content: center;
-}
-
-.search-input
+.serial-number-input
 {
     border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+.label {
+  padding: 10px;
 }
 
-.search-btn
-{
-    color: black;
-    background: transparent;
-    border: 1px solid green;
-    border-radius: 10px;
-}
 .btn{
   border: solid 1px #3ec309;
   border-radius: 3px;

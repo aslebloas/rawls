@@ -26,6 +26,12 @@ def add_device():
     return render_template("new_device.html")
 
 
+# Add Amazon Echo
+@app.route("/amazon/")
+def amazon():
+    return render_template("amazon.html")
+
+
 # Learn about privacy
 @app.route("/learn/")
 def learn():
