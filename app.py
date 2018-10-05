@@ -26,10 +26,10 @@ def add_device():
     return render_template("new_device.html")
 
 
-# Edit device
-@app.route("/devices/1/edit")
-def edit_device():
-    return "Edit device"
+# Learn about privacy
+@app.route("/learn/")
+def learn():
+    return render_template("learn.html")
 
 
 # Delete device

@@ -256,6 +256,7 @@ input:checked + .slider:before {
 }
 .block {
   background-color: #e2dfdf;
+  padding-bottom: 5%;
 }
 .devices-container, .data-container {
   display: flex;
