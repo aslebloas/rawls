@@ -273,7 +273,7 @@ input:checked + .slider:before {
   height: auto;
 }
 .dev-logo, .data-icon{
-  flex: 1;
+  flex: .25;;
   padding: 1%;
   text-align: center;
   font-size: 2em;
@@ -286,6 +286,7 @@ input:checked + .slider:before {
 }
 .data-name {
   flex: 5;
+  padding-left:0px;
 }
 .dev-check {
   color:gray;
@@ -307,7 +308,7 @@ div a .dev {
 .device img {
     max-height: 80px;
 }
-p.devTitle
+.devTitle
 {
   text-align: center;
 }
