@@ -104,6 +104,7 @@ div#devices-container {
     justify-content: center;
     flex-direction: column;
     padding-bottom: 50px;
+    text-align: center;
 }
 
 .device
@@ -127,8 +128,11 @@ div#content {
 .serial-number-input
 {
     border: 1px solid black;
-    border-radius: 3px;
     padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+    background: white;
+    padding: 8px;
 }
 .label {
   padding: 10px;
@@ -140,6 +144,7 @@ div#content {
   font-size: 1em;
   background: white;
   padding: 3%;
+  padding: 8px;
 }
 .mgmt-btn
 {
@@ -257,7 +262,8 @@ input:checked + .slider:before {
   border-radius: 5px;
   display: flex;
   background: white;
-  padding: 2% 0% 0% 2%;
+  padding: 2%;
+  text-align:center;
 }
 .dev {
   display: flex;
@@ -297,4 +303,8 @@ input:checked + .slider:before {
 }
 .device img {
     max-height: 80px;
+}
+p.devTitle
+{
+  text-align: center;
 }
