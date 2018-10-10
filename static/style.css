@@ -288,11 +288,14 @@ input:checked + .slider:before {
   flex: 5;
 }
 .dev-check {
-  color: gray;
+  color:gray;
   font-size: 2em;
   padding: 3%;
   flex: 1;
   text-align: center;
+}
+div a .dev {
+    color: black;
 }
 .fa-check-circle {
   color: #52d669;
