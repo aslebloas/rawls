@@ -2,8 +2,7 @@ CREATE DATABASE IF NOT EXISTS RAWLS;
 
 Use RAWLS;
 
-CREATE USER IF NOT EXISTS 'test_user'@'localhost';
-SET PASSWORD FOR 'test_user'@'localhost' = 'test_123';
+CREATE USER IF NOT EXISTS 'test_user'@'localhost' IDENTIFIED BY 'test_123456';
 GRANT ALL PRIVILEGES ON RAWLS.* TO 'test_user'@'localhost';
 GRANT SELECT ON performance_schema.* TO 'test_user'@'localhost';
 
