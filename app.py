@@ -73,6 +73,7 @@ def add_user(string):
     else:
         user = User(broken_up[0], broken_up[1], broken_up[2])
     db.session.add(user)
+    db.session.commit()
     return render_template("new_device.html")
 
 # Add new device
