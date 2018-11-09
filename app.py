@@ -1,19 +1,16 @@
-from flask import Flask
 from flask import render_template
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://test_user:test_123@localhost/RAWLS'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://test_user:test_123456@localhost/RAWLS'
 db = SQLAlchemy(app)
 
 class User(db.Model):
-    __tablename__ = 'User'
-    user_ID = db.Column(db.Integer, nullable = False, primary_key = True)
+    user_email = db.Column(db.String(50), primary_key = True)
     user_name = db.Column(db.String(50), nullable = False)
-    user_email = db.Column(db.String(50), nullable = False)
     user_password = db.Column(db.String(20))
-    devices = db.relationship("Devices",
+    device = db.relationship("Devices",
                                 backref= db.backref("users", cascade="all, delete-orphan"),
                                 lazy='joined')
     def __init__(self, name, email, password=None):
@@ -22,12 +19,10 @@ class User(db.Model):
         self.user_password = password
 
 class Devices(db.Model):
-    __tablename__ = "Devices"
-    user_email = db.Column(db.String(100), db.ForeignKey(User.user_email))
-    device_SN = db.Column(db.String(100), nullable = False, primary_key = True)
+    device_SN = db.Column(db.String(50), primary_key = True)
+    user_email = db.Column(db.String(50), db.ForeignKey(User.user_email), nullable = False)
     device_brand = db.Column(db.String(50))
-    permissions = db.relationship("Permissions", 
-                                    cascade= "all, delete-orphan", 
+    permission = db.relationship("Permissions",
                                     backref=db.backref("devices", cascade="all, delete-orphan"), 
                                     lazy='joined')
     def __init__(self, email, SN, brand=None):
@@ -36,8 +31,8 @@ class Devices(db.Model):
         self.device_brand = brand
 
 class Permissions(db.Model):
-    __tablename__ = "Permissions"
-    device_SN = db.Column(db.String(100), db.ForeignKey(Devices.device_SN))
+    permission_id = db.Column(db.Integer, primary_key = True)
+    device_SN = db.Column(db.String(50), db.ForeignKey(Devices.device_SN), nullable = False)
     gender = db.Column(db.Boolean)
     age = db.Column(db.Boolean)
     height = db.Column(db.Boolean)
