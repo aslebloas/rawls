@@ -1,0 +1,32 @@
+pragma solidity ^0.4.18;
+contract Rawls {
+
+    uint128 recordCount = 0;
+    uint128[] serialnum;
+    struct User {
+        uint128 id;
+        uint128 serialnumber;
+        bool height;
+        bool weight;
+        bool sleep;
+        bool steps;
+    }
+    
+    mapping(uint128 => User) public users;
+
+    function pushUser(uint128 serialnumber, bool height, bool weight, bool sleep, bool steps) external {
+        recordCount++;
+        users[recordCount] = User(recordCount,serialnumber,height,weight,steps,sleep);
+        serialnum.push(serialnumber);
+
+    }
+
+    function getRecordCount() public view returns(uint128){
+        return (recordCount);
+    }
+    
+    function updateUser(uint128 recordCount, bool height, bool weight, bool sleep, bool steps) external {
+        users[recordCount] = User(recordCount,serialnum[recordCount-1], height,weight,sleep,steps);
+    }
+
+}
