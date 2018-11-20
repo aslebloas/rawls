@@ -1,8 +1,6 @@
 pragma solidity ^0.4.18;
 contract Rawls {
 
-    uint128 public recordCount;
-    uint128[] serialnum;
     struct User {
         uint128 id;
         uint128 serialnumber;
