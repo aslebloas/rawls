@@ -41,7 +41,7 @@
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
       }
 
-      web3.eth.defautAccount = web3.eth.accounts[1];
+      web3.eth.defautAccount = web3.eth.accounts[0];
       var RawlsContract = web3.eth.contract([
 	{
 		"constant": false,
@@ -105,10 +105,13 @@
 	}
 ]);
 
-      var Rawls = RawlsContract.at('0xe55b10b86ec4caccd16c1ffcdcc30a9600c2ccdc');
+      var Rawls = RawlsContract.at('0xa04b9ad7de28b6600c771a41d78c89e57418eb11');
       console.log(Rawls);
       Rawls.getUser(function(error, result) {
+      if (!error) {
       console.log(result)
+      } else
+      console.error(error)
       });
     $("#submit").click(function() {
       Rawls.pushUser($("#serialnum").val(), $("#height").val(), $("#weight").val(), $("#sleep").val(), $("#steps").val())});
