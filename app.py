@@ -10,7 +10,7 @@ class User(db.Model):
     user_email = db.Column(db.String(50), primary_key = True)
     user_name = db.Column(db.String(50), nullable = False)
     user_password = db.Column(db.String(20))
-    device = db.relationship("Devices",
+    devices = db.relationship("Devices",
                                 backref= db.backref("users", cascade="all, delete-orphan"),
                                 lazy='joined')
     def __init__(self, name, email, password=None):
@@ -22,7 +22,7 @@ class Devices(db.Model):
     device_SN = db.Column(db.String(50), primary_key = True)
     user_email = db.Column(db.String(50), db.ForeignKey(User.user_email), nullable = False)
     device_brand = db.Column(db.String(50))
-    permission = db.relationship("Permissions",
+    permissions = db.relationship("Permissions",
                                     backref=db.backref("devices", cascade="all, delete-orphan"), 
                                     lazy='joined')
     def __init__(self, email, SN, brand=None):
@@ -33,13 +33,13 @@ class Devices(db.Model):
 class Permissions(db.Model):
     permission_id = db.Column(db.Integer, primary_key = True)
     device_SN = db.Column(db.String(50), db.ForeignKey(Devices.device_SN), nullable = False)
-    gender = db.Column(db.Boolean)
-    age = db.Column(db.Boolean)
-    height = db.Column(db.Boolean)
-    weight = db.Column(db.Boolean)
-    heart_rate = db.Column(db.Boolean)
-    sleeping_cycle = db.Column(db.Boolean)
-    activity_frequency = db.Column(db.Boolean)
+    gender = db.Column(db.Boolean, nullable = False)
+    age = db.Column(db.Boolean, nullable = False)
+    height = db.Column(db.Boolean, nullable = False)
+    weight = db.Column(db.Boolean, nullable = False)
+    heart_rate = db.Column(db.Boolean, nullable = False)
+    sleeping_cycle = db.Column(db.Boolean, nullable = False)
+    activity_frequency = db.Column(db.Boolean, nullable = False)
 
     def __init__(self, SN, **kwargs):
         self.device_SN = SN,
@@ -54,19 +54,22 @@ def index():
 # Show device details
 @app.route("/devices/<SN>/")
 def show_device(SN):
-    choose = Devices.query.filter_by(device_SN=SN)
+    db.session.flush()
+    choose = db.session.query(Devices).filter_by(device_SN=SN).first()
     return render_template("show_device.html")
 
 
 @app.route("/user/<username>/")
 def profile(username):
-    profile = User.query.filter_by(user_name=username)
+    db.session.flush()
+    profile = db.session.query(User).filter_by(user_name=username).first()
     return render_template("profile.html")
 
 # Add new user
 # Make string in format: name-email-password. password part is optional
 @app.route("/user/new/<string>")
 def add_user(string):
+    db.session.flush()
     broken_up = string.split("-")
     if len(broken_up) == 2:
         user = User(broken_up[0], broken_up[1])
@@ -77,10 +80,35 @@ def add_user(string):
     return render_template("new_device.html")
 
 # Add new device
-@app.route("/devices/new/")
-def add_device():
+# user_string is wanted user's email and name separated by "-"
+# device_string is device's owner email and SN separated by "-", can also include brand
+@app.route("/devices/<user_string>/<device_string>")
+def add_device(user_string, device_string):
+    broken_user = user_string.split("-")
+    broken_device = device_string.split("-")
+    chosen_user=db.session.query(User).filter_by(user_email=broken_user[0], user_name=broken_user[1])
+    if len(broken_device) == 2:
+        new_device=Devices(broken_device[0], broken_device[1])
+    else:
+        new_device=Devices(broken_device[0], broken_device[1], broken_device[2])
+    chosen_user.devices.append(new_device)
+    db.session.add(new_device)
+    db.session.commit()
     return render_template("new_device.html")
-
+# device string should be device SN
+#permissions is the true or false for the permissions separted by "-", check order above
+@app.route("/permissions/<device_string>/<permissions>")
+def add_permissions(device_string, permissions):
+    db.session.flush()
+    broken_device=device_string
+    broken_permissions = permissions.split("-")
+    permissions_key=["permission_id","device_SN", "gender", "age", "height",  "weight", "heart_rate", "sleeping_cycle", "activity_frequency"]
+    permiss_dict = dict(zip(permissions_key, broken_permissions))
+    new_permissions = Permissions(broken_device[0], permiss_dict)
+    chosen_device = db.session.query(Devices).filter_by(broken_device[0], broken_device[1])
+    chosen_device.permissions.append(new_permissions)
+    db.session.add(new_permissions)
+    db.session.commit()
 
 # Add Amazon Echo
 @app.route("/amazon/")
