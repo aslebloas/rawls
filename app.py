@@ -11,7 +11,7 @@ class User(db.Model):
     user_name = db.Column(db.String(50), nullable = False)
     user_password = db.Column(db.String(20))
     devices = db.relationship("Devices",
-                                backref= db.backref("users", cascade="all, delete-orphan"),
+                                backref= db.backref("users", cascade="all, delete"),
                                 lazy='joined')
     def __init__(self, name, email, password=None):
         self.user_name = name
@@ -23,7 +23,7 @@ class Devices(db.Model):
     user_email = db.Column(db.String(50), db.ForeignKey(User.user_email), nullable = False)
     device_brand = db.Column(db.String(50))
     permissions = db.relationship("Permissions",
-                                    backref=db.backref("devices", cascade="all, delete-orphan"), 
+                                    backref=db.backref("devices", cascade="all, delete"), 
                                     lazy='joined')
     def __init__(self, email, SN, brand=None):
         self.user_email = email
@@ -42,8 +42,8 @@ class Permissions(db.Model):
     activity_frequency = db.Column(db.Boolean, nullable = False)
 
     def __init__(self, SN, **kwargs):
-        self.device_SN = SN,
         super(Permissions, self).__init__(**kwargs)
+        self.device_SN = SN
 
 
 @app.route("/")
@@ -66,7 +66,7 @@ def profile(username):
     return render_template("profile.html")
 
 # Add new user
-# Make string in format: name-email-password. password part is optional
+# Make string in format: "name-email-password". password part is optional
 @app.route("/user/new/<string>")
 def add_user(string):
     db.session.flush()
@@ -95,17 +95,17 @@ def add_device(user_string, device_string):
     db.session.add(new_device)
     db.session.commit()
     return render_template("new_device.html")
-# device string should be device SN
-#permissions is the true or false for the permissions separted by "-", check order above
+# device string should be device SN and user_emailseparated by "-"
+#permissions is the true or false for the permissions separted by "-", check order below
 @app.route("/permissions/<device_string>/<permissions>")
 def add_permissions(device_string, permissions):
     db.session.flush()
-    broken_device=device_string
+    broken_device=device_string.split("-")
     broken_permissions = permissions.split("-")
-    permissions_key=["permission_id","device_SN", "gender", "age", "height",  "weight", "heart_rate", "sleeping_cycle", "activity_frequency"]
+    permissions_key=["gender", "age", "height",  "weight", "heart_rate", "sleeping_cycle", "activity_frequency"]
     permiss_dict = dict(zip(permissions_key, broken_permissions))
-    new_permissions = Permissions(broken_device[0], permiss_dict)
-    chosen_device = db.session.query(Devices).filter_by(broken_device[0], broken_device[1])
+    new_permissions = Permissions(broken_device[0], **permiss_dict)
+    chosen_device = db.session.query(Devices).filter_by(device_SN=broken_device[0], user_email=broken_device[1])
     chosen_device.permissions.append(new_permissions)
     db.session.add(new_permissions)
     db.session.commit()
@@ -125,9 +125,9 @@ def learn():
 # Delete device
 @app.route("/devices/<SN>/delete")
 def delete_device(SN):
-    choose = Devices.query.filter_by(device_SN=SN)
-    db.session.delete(choose)
+    choose = Devices.query.filter_by(device_SN=SN).delete()
     db.session.commit()
+    db.session.flush()
     return "Delete device"
 
 
